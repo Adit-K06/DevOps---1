@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI Cloud App</title>
+</head>
+<body>
+    <h2>Enter Your Name</h2>
+
+    <input type="text" id="nameInput" />
+    <button onclick="callAPI()">Submit</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        async function callAPI() {
+            const name = document.getElementById("nameInput").value;
+            const res = await fetch(
+                `http://127.0.0.1:8000/api/hello?name=${name}`
+            );
+
+            const data = await res.json();
+            document.getElementById("result").innerHTML= data.message;
+        }
+    </script>
+</body>
+</html>
