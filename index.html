@@ -15,7 +15,7 @@
         async function callAPI() {
             const name = document.getElementById("nameInput").value;
             const res = await fetch(
-                `http://127.0.0.1:8000/api/hello?name=${name}`
+                `/api/hello?name=${name}`
             );
 
             const data = await res.json();
