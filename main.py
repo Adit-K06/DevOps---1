@@ -4,7 +4,6 @@ from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-# Middleware and CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
